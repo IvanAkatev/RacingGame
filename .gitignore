@@ -1,0 +1,10 @@
+build/
+out/
+.vscode/
+.idea/
+.DS_Store
+*.user
+*.suo
+*.log
+*.tmp
+*.app

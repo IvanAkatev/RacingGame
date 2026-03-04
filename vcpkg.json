@@ -1,0 +1,8 @@
+{
+  "name": "racing-sfml3",
+  "version-string": "0.1.0",
+  "description": "OOP racing game skeleton (SFML 3.x, vcpkg)",
+  "dependencies": [
+    "sfml"
+  ]
+}
