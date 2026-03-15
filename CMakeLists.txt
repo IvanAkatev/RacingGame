@@ -23,6 +23,7 @@ add_executable(racing
   src/app/RendererSFML.cpp
 
   src/core/GameModel.cpp
+  src/core/track/CircleTrack.cpp
   src/core/track/StraightTrack.cpp
   src/core/vehicle/Vehicle.cpp
 )

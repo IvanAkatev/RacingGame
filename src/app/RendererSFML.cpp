@@ -16,7 +16,7 @@ sf::VertexArray RendererSFML::buildTrackLine(const ITrack& track, int segments) 
 }
 
 void RendererSFML::draw(sf::RenderTarget& target, const GameModel& model) {
-    auto line = buildTrackLine(model.track(), 2);
+    auto line = buildTrackLine(model.track(), 128);
     target.draw(line);
 
     auto ts = model.vehicleSample();
@@ -24,5 +24,7 @@ void RendererSFML::draw(sf::RenderTarget& target, const GameModel& model) {
     dot.setRadius(8.f);
     dot.setOrigin(sf::Vector2f{8.f, 8.f});
     dot.setPosition(toSf(ts.position));
+
+    dot.setFillColor(sf::Color(0, 66, 37));
     target.draw(dot);
 }
