@@ -4,9 +4,9 @@
 class Vehicle {
 public:
     struct Params {
-        float engineAccel = 150.f;
+        float engineAccel = 750.f;
         float coastDecel  = 250.f;
-        float maxSpeed    = 300.f;
+        float maxSpeed    = 800.f;
         float spinDuration = 0.7f;
     };
 

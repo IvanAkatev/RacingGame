@@ -6,7 +6,7 @@ int Application::run() {
 
     sf::Clock clock;
     float accumulator = 0.f;
-    const float fixedDt = 1.f / 120.f;
+    const float fixedDt = 1.f / 300.f;
 
     while (window_.isOpen()) {
         InputSnapshot input;

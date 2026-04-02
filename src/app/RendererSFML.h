@@ -7,5 +7,5 @@ public:
     void draw(sf::RenderTarget& target, const GameModel& model);
 
 private:
-    sf::VertexArray buildTrackLine(const ITrack& track, int segments = 64) const;
+    sf::VertexArray buildTrackRibbon(const ITrack& track, float width, int segments = 64) const;
 };

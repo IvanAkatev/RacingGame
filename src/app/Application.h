@@ -14,7 +14,7 @@ private:
     void render();
 
 private:
-    sf::RenderWindow window_{sf::VideoMode(sf::Vector2u{1024u, 640u}), "Racing Skeleton (SFML 3 + vcpkg)"};
+    sf::RenderWindow window_{sf::VideoMode(sf::Vector2u{1920u, 1080u}), "Racing Skeleton (SFML 3 + vcpkg)"};
     GameModel model_;
     RendererSFML renderer_;
 };

@@ -4,7 +4,7 @@
 
 
 GameModel::GameModel() {
-    track_ = std::make_unique<CircleTrack>(Vec2{512.f, 320.f}, 250.f);
+    track_ = std::make_unique<CircleTrack>(Vec2{960.f, 490.f}, 400.f);
     // track_ = std::make_unique<StraightTrack>(Vec2{100.f, 320.f}, Vec2{1800.f, 320.f});
     vehicle_.setDistance(0.f);
 }
