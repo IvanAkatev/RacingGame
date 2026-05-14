@@ -26,6 +26,11 @@ TrackSample CircleTrack::sample(float s) const {
 
     ts.position = center_ + Vec2{ c * radius_, sn * radius_ };
     ts.tangent  = Vec2{ -sn, c };  // движение против часовой
-    ts.curvature = 1.0f / radius_; // по желанию, если используется
+    ts.normal = Vec2{-c, -sn};     // единичная нормаль влево от касательной
+    ts.curvature = 1.0f / radius_;
+    ts.maxLatAccel = 200.f;
+    ts.halfWidth = 30.f;
+    ts.centerlineGrip = 1.f;
+    ts.offtrackGrip = 0.65f;
     return ts;
 }

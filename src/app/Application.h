@@ -17,4 +17,5 @@ private:
     sf::RenderWindow window_{sf::VideoMode(sf::Vector2u{1920u, 1080u}), "Racing Skeleton (SFML 3 + vcpkg)"};
     GameModel model_;
     RendererSFML renderer_;
+    float offtrackMessageLeft_ = 0.f;
 };

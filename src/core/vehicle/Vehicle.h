@@ -8,6 +8,9 @@ public:
         float coastDecel  = 250.f;
         float maxSpeed    = 800.f;
         float spinDuration = 0.7f;
+        float lateralDriftGain = 0.01f;
+        float recenteringGain = 1.5f;
+        float offtrackSpeedPenalty = 0.35f;
     };
 
     enum class State { Normal, Spinning };
@@ -18,6 +21,8 @@ public:
     void setDistance(float s) { s_ = s; }
     float distance() const { return s_; }
     float speed() const { return v_; }
+    float lateralOffset() const { return lateralOffset_; }
+    bool offtrack() const { return offtrack_; }
     State state() const { return state_; }
 
     void update(float dt, bool throttle, const TrackSample& ts);
@@ -28,6 +33,8 @@ private:
     Params p_;
     float s_ = 0.f;
     float v_ = 0.f;
+    float lateralOffset_ = 0.f;
+    bool offtrack_ = false;
 
     State state_ = State::Normal;
     float spinLeft_ = 0.f;

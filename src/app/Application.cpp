@@ -1,4 +1,5 @@
 #include "app/Application.h"
+#include <algorithm>
 #include <optional>
 
 int Application::run() {
@@ -13,6 +14,7 @@ int Application::run() {
         handleInput(input);
 
         float frameDt = clock.restart().asSeconds();
+        offtrackMessageLeft_ = std::max(0.f, offtrackMessageLeft_ - frameDt);
         accumulator += frameDt;
 
         while (accumulator >= fixedDt) {
@@ -42,10 +44,13 @@ void Application::handleInput(InputSnapshot& input) {
 
 void Application::update(float dt, const InputSnapshot& input) {
     model_.update(dt, input);
+    if (model_.vehicle().offtrack()) {
+        offtrackMessageLeft_ = 1.5f;
+    }
 }
 
 void Application::render() {
     window_.clear();
-    renderer_.draw(window_, model_);
+    renderer_.draw(window_, model_, offtrackMessageLeft_ > 0.f);
     window_.display();
 }

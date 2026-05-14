@@ -20,5 +20,10 @@ TrackSample StraightTrack::sample(float s) const {
     float ss = wrapDistance(s);
     ts.position = start_ + dir_ * ss;
     ts.tangent = dir_;
+    ts.normal = Vec2{-dir_.y, dir_.x};
+    ts.maxLatAccel = 1200.f;
+    ts.halfWidth = 30.f;
+    ts.centerlineGrip = 1.f;
+    ts.offtrackGrip = 0.65f;
     return ts;
 }
