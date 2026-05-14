@@ -19,7 +19,7 @@ static Vec2 perpLeft(const Vec2& tangent) {
 
 RendererSFML::RendererSFML() {
     // Use OS font as a lightweight HUD fallback.
-    uiFontReady_ = uiFont_.openFromFile("C:/Windows/Fonts/arial.ttf");
+    uiFontReady_ = uiFont_.openFromFile("arial.ttf");
 
     if (!carTexture_.loadFromFile("assets/sprites/Lotus.png")) {
         return;
